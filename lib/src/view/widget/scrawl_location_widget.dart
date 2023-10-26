@@ -18,7 +18,7 @@ import '../toast.dart';
 
 /// 图片涂鸦+显示地理位置, 获取图片
 class ScrawlWithLocationWidget extends StatefulWidget {
-  final String appName;
+  final String? appName;
   final String filePath;
   final List<Color> colors;
   final Color backColor;
@@ -38,7 +38,7 @@ class ScrawlWithLocationWidget extends StatefulWidget {
     this.appLogo,
     this.showTop = true,
     this.enableTransform = true,
-    this.appName = '',
+    this.appName,
     this.authorName = '',
     required this.saveImage,
   });
@@ -80,7 +80,6 @@ class ScrawlWithLocationState extends State<ScrawlWithLocationWidget>
     imageFile =
         StringUtil.isEmpty(widget.filePath) ? null : File(widget.filePath);
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -191,13 +190,16 @@ class ScrawlWithLocationState extends State<ScrawlWithLocationWidget>
               Row(
                 children: <Widget>[
                   Container(
-                      height: 30,
-                      width: 30,
-                      padding: const EdgeInsets.all(5),
-                      child: widget.appLogo),
-                  Text(widget.appName,
-                      style: MiniStyle.textTag
-                          .copyWith(color: MiniColor.lightGray)),
+                    height: 30,
+                    width: 30,
+                    padding: const EdgeInsets.all(5),
+                    child: widget.appLogo,
+                  ),
+                  Text(
+                    widget.appName ?? '',
+                    style:
+                        MiniStyle.textTag.copyWith(color: MiniColor.lightGray),
+                  ),
                 ],
               ),
             ],
