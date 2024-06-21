@@ -65,8 +65,11 @@ void showLoadingDialog(
   showDialog(
     context: context,
     barrierDismissible: false,
-    builder: (ctx) => WillPopScope(
-      onWillPop: onWillPop ?? () => Future.value(barrierDismissible),
+    builder: (ctx) => PopScope(
+      canPop: barrierDismissible,
+      onPopInvoked: (value) {
+        onWillPop?.call();
+      },
       child: LoadingDialog(hintText: hintText),
     ),
   );

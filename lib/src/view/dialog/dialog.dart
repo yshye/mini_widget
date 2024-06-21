@@ -15,12 +15,10 @@ Future showCustomizeDialog(
   return showDialog(
     context: context,
     barrierDismissible: barrierDismissible,
-    builder: (ctx) => WillPopScope(
-        onWillPop: () async {
-          if (onWillPop == null) {
-            return Future.value(barrierDismissible);
-          }
-          return onWillPop();
+    builder: (ctx) => PopScope(
+        canPop: barrierDismissible,
+        onPopInvoked: (value) {
+          onWillPop?.call();
         },
         child: CustomizeDialog(
           barrierDismissible: barrierDismissible,
