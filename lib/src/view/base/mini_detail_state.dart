@@ -12,8 +12,14 @@ abstract class MiniDetailState<T extends StatefulWidget> extends State<T>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return WillPopScope(
-      onWillPop: onSystemBack,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (value) async {
+        bool flag = await onSystemBack();
+        if (flag) {
+          pop();
+        }
+      },
       child: Container(
         alignment: Alignment.topCenter,
         color: Colors.black,
@@ -116,7 +122,7 @@ abstract class MiniDetailState<T extends StatefulWidget> extends State<T>
   Widget? buildFloatingActionButton() => null;
 
   @protected
-  Color getBackgroundColor() => Theme.of(context).colorScheme.background;
+  Color getBackgroundColor() => Theme.of(context).colorScheme.surface;
 
   @protected
   Future<bool> onSystemBack() async {

@@ -14,7 +14,7 @@ class TabHeaderCell extends StatelessWidget {
   final ScrollController? controller;
 
   const TabHeaderCell(this.data,
-      {Key? key,
+      {super.key,
       this.color,
       this.textStyle,
       this.itemHeight = 40,
@@ -22,8 +22,7 @@ class TabHeaderCell extends StatelessWidget {
       this.actionChild,
       this.actionWidth = 80,
       this.controller,
-      this.alignment})
-      : super(key: key);
+      this.alignment});
 
   @override
   Widget build(BuildContext context) {

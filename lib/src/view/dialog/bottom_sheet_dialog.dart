@@ -17,7 +17,7 @@ class BottomSheetDialog extends StatelessWidget {
   final ScrollController _controller = ScrollController();
 
   BottomSheetDialog({
-    Key? key,
+    super.key,
     required this.title,
     this.children = const [],
     this.padding = const EdgeInsets.only(left: 5, right: 5, bottom: 10),
@@ -30,7 +30,7 @@ class BottomSheetDialog extends StatelessWidget {
     this.onClose,
     this.backgroundColor = Colors.white,
     this.offsetWithEnd,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -15,7 +15,7 @@ class MaterialButtonCell extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
 
   const MaterialButtonCell({
-    Key? key,
+    super.key,
     this.onTap,
     this.label,
     this.textColor,
@@ -28,7 +28,7 @@ class MaterialButtonCell extends StatelessWidget {
     this.sideWidth = 1,
     this.fontSize = 14,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -21,7 +21,7 @@ class ThemeUtil {
       Theme.of(context).textTheme.bodyLarge?.color;
 
   static Color getBackgroundColor(BuildContext context) =>
-      Theme.of(context).colorScheme.background;
+      Theme.of(context).colorScheme.surface;
 
   static Color getDialogBackgroundColor(BuildContext context) =>
       Theme.of(context).canvasColor;

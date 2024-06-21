@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class MiniButton extends StatelessWidget {
   const MiniButton({
-    Key? key,
+    super.key,
     this.text = '',
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final String text;
   final VoidCallback onPressed;

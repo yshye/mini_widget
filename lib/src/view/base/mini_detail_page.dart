@@ -37,7 +37,7 @@ abstract class MiniDetailPage extends StatelessWidget {
   bool isEmpty(value) => StringUtil.isEmpty(value);
 
   Color getBackgroundColor(BuildContext context) =>
-      Theme.of(context).colorScheme.background;
+      Theme.of(context).colorScheme.surface;
 
   Widget? buildTitle(BuildContext context);
 

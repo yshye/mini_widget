@@ -45,7 +45,8 @@ mixin StateMixin<T extends StatefulWidget> on State<T> {
   Future<PopParam> pushPage(Widget page) => NavigatorUtil.push(context, page);
 
   @protected
-  Future<PopParam> pushRouter(String path, {
+  Future<PopParam> pushRouter(
+    String path, {
     bool replace = false,
     bool clearStack = false,
     TransitionType transition = TransitionType.inFromRight,
@@ -89,11 +90,11 @@ mixin StateMixin<T extends StatefulWidget> on State<T> {
   void showError(String error) => ToastUtil.showError(error);
 
   void massageDialog(String content,
-      {String? title,
-        String? colorContent,
-        String buttonText = '知道了',
-        VoidCallback? onPressed,
-        bool left = false}) =>
+          {String? title,
+          String? colorContent,
+          String buttonText = '知道了',
+          VoidCallback? onPressed,
+          bool left = false}) =>
       showMassageDialog(
         context,
         content,
@@ -105,13 +106,13 @@ mixin StateMixin<T extends StatefulWidget> on State<T> {
       );
 
   void confirmDialog(String content,
-      {String? title,
-        String? colorContent,
-        String? cancelText,
-        onCancelPressed,
-        String? okText,
-        VoidCallback? onOkPressed,
-        bool left = false}) =>
+          {String? title,
+          String? colorContent,
+          String? cancelText,
+          onCancelPressed,
+          String? okText,
+          VoidCallback? onOkPressed,
+          bool left = false}) =>
       showConfirmDialog(
         context,
         content,
@@ -135,24 +136,19 @@ mixin StateMixin<T extends StatefulWidget> on State<T> {
       child: Theme(
         data: ThemeData(
             cupertinoOverrideTheme:
-            const CupertinoThemeData(brightness: Brightness.light)),
+                const CupertinoThemeData(brightness: Brightness.light)),
         child: const CupertinoActivityIndicator(radius: 14.0),
       ),
     );
   }
 
-  Widget buildBackButton({Function? onTap}) =>
-      IconButton(
+  Widget buildBackButton({Function? onTap}) => IconButton(
         icon: Icon(MdiIcons.arrowLeft),
         color: Colors.blue,
         onPressed: () => onTap != null ? onTap() : Navigator.of(context).pop(),
       );
 
-  double getMaxWidth() =>
-      MediaQuery
-          .of(context)
-          .size
-          .width;
+  double getMaxWidth() => MediaQuery.of(context).size.width;
 
   Widget buildButton({
     Function()? onPressed,
@@ -164,7 +160,7 @@ mixin StateMixin<T extends StatefulWidget> on State<T> {
     return ElevatedButton(
       onPressed: onPressed,
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(color),
+        backgroundColor: WidgetStateProperty.all(color),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),

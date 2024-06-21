@@ -52,7 +52,7 @@ class GZXDropDownHeader extends StatefulWidget {
   final double? headerWidth;
 
   const GZXDropDownHeader({
-    Key? key,
+    super.key,
     required this.items,
     required this.controller,
     required this.stackKey,
@@ -69,7 +69,7 @@ class GZXDropDownHeader extends StatefulWidget {
     this.onItemTap,
     this.color = Colors.white,
     this.headerWidth,
-  }) : super(key: key);
+  });
 
   @override
   createState() => _GZXDropDownHeaderState();
@@ -266,7 +266,7 @@ class _GZXDropDownHeaderState extends State<GZXDropDownHeader>
             SizedBox(
               width: 50,
               height: widget.height,
-              child: Icon(Icons.swap_vert,color: widget.iconColor),
+              child: Icon(Icons.swap_vert, color: widget.iconColor),
             ),
             if (index != widget.items.length - 1) ...{
               Container(

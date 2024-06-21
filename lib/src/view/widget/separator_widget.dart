@@ -20,13 +20,12 @@ class SeparatorWidget extends StatelessWidget {
   final double lineWidth;
 
   const SeparatorWidget(
-      {Key? key,
+      {super.key,
       this.color,
       this.dash = 4.0,
       this.direction = Axis.vertical,
       this.emptyDash = 4.0,
-      this.lineWidth = 1.0})
-      : super(key: key);
+      this.lineWidth = 1.0});
 
   @override
   Widget build(BuildContext context) {

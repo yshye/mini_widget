@@ -4,8 +4,7 @@ class DefaultPage extends StatelessWidget {
   final Widget child;
   final String title;
 
-  const DefaultPage({Key? key, required this.title, required this.child})
-      : super(key: key);
+  const DefaultPage({super.key, required this.title, required this.child});
 
   @override
   Widget build(BuildContext context) {

@@ -18,7 +18,7 @@ class GroupTagPanelWidget extends StatelessWidget {
   final Widget? rightTitle;
 
   const GroupTagPanelWidget({
-    Key? key,
+    super.key,
     this.groupTitle,
     this.groupTitleStyle,
     this.groupTitleColor,
@@ -33,7 +33,7 @@ class GroupTagPanelWidget extends StatelessWidget {
     this.fontSize = 16,
     this.titlePrefixColor,
     this.rightTitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

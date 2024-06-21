@@ -19,7 +19,7 @@ class TagPanelWidget extends StatelessWidget {
 
   const TagPanelWidget(
     this.items, {
-    Key? key,
+    super.key,
     this.tagWidth = 80,
     this.itemHeight = 15,
     this.panelColor = Colors.transparent,
@@ -29,7 +29,7 @@ class TagPanelWidget extends StatelessWidget {
     this.valueColor = const Color(0xff5d6478),
     this.textAlign = TextAlign.left,
     this.fontSize = 16,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

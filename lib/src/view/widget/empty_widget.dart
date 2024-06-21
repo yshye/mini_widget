@@ -7,13 +7,12 @@ class EmptyWidget extends StatelessWidget {
   final Color? emptyMessageColor;
 
   const EmptyWidget({
-    Key? key,
+    super.key,
     this.emptyImageAsset,
     this.emptyMessage = '暂无内容！',
     this.child,
     this.emptyMessageColor,
-  })  : assert(child != null || emptyImageAsset != null),
-        super(key: key);
+  }) : assert(child != null || emptyImageAsset != null);
 
   @override
   Widget build(BuildContext context) {

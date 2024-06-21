@@ -19,7 +19,7 @@ class MiniSearchWidget extends StatelessWidget {
   final bool isIWork = false;
 
   const MiniSearchWidget({
-    Key? key,
+    super.key,
     required this.controller,
     this.hintText = '快速搜索',
     this.hintTextStyle,
@@ -31,7 +31,7 @@ class MiniSearchWidget extends StatelessWidget {
     this.showIcon = true,
     this.maxLength = 20,
     // this.isIWork = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class MiniSearchWidget extends StatelessWidget {
       width: width ??
           (isIWork ? getMaxWidth(context) - 215 : getMaxWidth(context) * 0.75),
       decoration: BoxDecoration(
-        color: color ?? Theme.of(context).colorScheme.background,
+        color: color ?? Theme.of(context).colorScheme.surface,
         borderRadius: borderRadius ?? BorderRadius.circular(4.0),
       ),
       child: MiniTextField(

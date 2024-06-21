@@ -18,7 +18,7 @@ class InkCell extends StatelessWidget {
   final String? tooltip;
 
   const InkCell({
-    Key? key,
+    super.key,
     this.color = Colors.transparent,
     this.splashColor = const Color(0xFFE0E0E0),
     this.onTap,
@@ -35,8 +35,7 @@ class InkCell extends StatelessWidget {
     this.shapeWidths,
     this.tooltip,
   })  : assert(shapeColors == null || shapeColors.length == 4),
-        assert(shapeWidths == null || shapeWidths.length == 4),
-        super(key: key);
+        assert(shapeWidths == null || shapeWidths.length == 4);
 
   @override
   Widget build(BuildContext context) {

@@ -7,11 +7,11 @@ class LoadingListWidget extends StatelessWidget {
   final Color highlightColor;
 
   const LoadingListWidget({
-    Key? key,
+    super.key,
     this.itemChild,
     this.baseColor = const Color(0xFFE0E0E0),
     this.highlightColor = const Color(0xFFF5F5F5),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

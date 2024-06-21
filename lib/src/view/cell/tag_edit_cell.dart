@@ -13,13 +13,13 @@ class EditCell extends StatelessWidget {
   final String? allowSource;
 
   const EditCell({
-    Key? key,
+    super.key,
     this.padding = const EdgeInsets.all(1),
     this.minHeight = 40,
     required this.data,
     this.showCounter = true,
     this.allowSource,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

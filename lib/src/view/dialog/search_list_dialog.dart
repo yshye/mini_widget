@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widget/mini_search_widget.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:mini_extension/mini_extension.dart';
 
 import '../../router/navigator_util.dart';
 import '../typedef.dart';
 import 'bottom_sheet_dialog.dart';
-import '../../extension/extension.dart';
 
 class SearchListDialog<T> extends StatefulWidget {
   final String? hintText;
@@ -24,7 +24,7 @@ class SearchListDialog<T> extends StatefulWidget {
   final int top;
 
   const SearchListDialog(
-      {Key? key,
+      {super.key,
       this.hintText,
       this.titleHeight = 60,
       this.onTap,
@@ -37,8 +37,7 @@ class SearchListDialog<T> extends StatefulWidget {
       this.value,
       this.top = 100,
       this.width,
-      this.compare})
-      : super(key: key);
+      this.compare});
 
   @override
   State<StatefulWidget> createState() => _SearchListDialogState<T>();

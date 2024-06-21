@@ -17,7 +17,7 @@ class ImageLabelCell extends StatelessWidget {
   final bool visible;
 
   const ImageLabelCell({
-    Key? key,
+    super.key,
     this.label,
     required this.imagePath,
     this.color,
@@ -31,7 +31,7 @@ class ImageLabelCell extends StatelessWidget {
     this.offsetX = -8,
     this.offsetY = -8,
     this.visible = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

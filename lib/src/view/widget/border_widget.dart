@@ -16,7 +16,7 @@ class BorderWidget extends StatelessWidget {
   final int maxLines;
 
   const BorderWidget(
-      {Key? key,
+      {super.key,
       this.backColor,
       this.width,
       this.height,
@@ -29,8 +29,7 @@ class BorderWidget extends StatelessWidget {
       this.fontWeight = FontWeight.bold,
       this.padding =
           const EdgeInsets.only(top: 3, bottom: 2, left: 5, right: 5),
-      this.shapeWidth = 0.5})
-      : super(key: key);
+      this.shapeWidth = 0.5});
 
   @override
   Widget build(BuildContext context) {

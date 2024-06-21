@@ -11,15 +11,14 @@ class ImageCell extends StatelessWidget {
   final Widget? errorWidget;
 
   const ImageCell(
-      {Key? key,
+      {super.key,
       this.path,
       this.borderRadius,
       this.width = double.infinity,
       this.height = 150,
       this.radius = 5,
       this.placeholder,
-      this.errorWidget})
-      : super(key: key);
+      this.errorWidget});
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 /// 输入框封装
 class MiniTextField extends StatefulWidget {
   const MiniTextField({
-    Key? key,
+    super.key,
     required this.controller,
     this.maxLength = 20,
     this.autoFocus = false,
@@ -26,7 +26,7 @@ class MiniTextField extends StatefulWidget {
     this.onClear,
     this.focusedBorder,
     this.enabledBorder,
-  }) : super(key: key);
+  });
 
   final TextEditingController controller;
   final int maxLength;

@@ -22,8 +22,14 @@ abstract class MiniTableListState<T extends StatefulWidget, M> extends State<T>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return WillPopScope(
-      onWillPop: onSystemBack,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (value) async {
+        bool flag = await onSystemBack();
+        if (flag) {
+          pop();
+        }
+      },
       child: Material(
         color: getBackgroundColor(),
         child: Column(
@@ -32,7 +38,7 @@ abstract class MiniTableListState<T extends StatefulWidget, M> extends State<T>
             Expanded(
               child: EasyRefresh(
                 controller: _controller,
-                // header: BallPulseHeader(color: Theme.of(context).primaryColor),
+                // header: BallPulseHeader(colorf: Theme.of(context).primaryColor),
                 // footer: BallPulseFooter(color: Theme.of(context).primaryColor),
                 header: const CupertinoHeader(),
                 footer: const CupertinoFooter(),
@@ -88,7 +94,7 @@ abstract class MiniTableListState<T extends StatefulWidget, M> extends State<T>
 
   bool hasMore() => true;
 
-  Color getBackgroundColor() => Theme.of(context).colorScheme.background;
+  Color getBackgroundColor() => Theme.of(context).colorScheme.surface;
 
   fetchData(bool more) async {
     if (more) {
@@ -147,26 +153,23 @@ abstract class MiniListState<T extends StatefulWidget, M> extends State<T>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return WillPopScope(
-      onWillPop: onSystemBack,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (value) async {
+        bool flag = await onSystemBack();
+        if (flag) {
+          pop();
+        }
+      },
       child: Scaffold(
         backgroundColor: getBackgroundColor(),
         appBar: null,
         body: Material(
+          color: getBackgroundColor(),
           child: EasyRefresh(
             controller: _controller,
-            // firstRefresh: firstRefresh(), // header: BallPulseHeader(color: Theme.of(context).primaryColor),
-            //                 // footer: BallPulseFooter(color: Theme.of(context).primaryColor),
             header: const CupertinoHeader(),
             footer: const CupertinoFooter(),
-            // emptyWidget: showEmptyWidget
-            //     ? EmptyWidget(
-            //         emptyImageAsset: getEmptyImageAsset(),
-            //         emptyMessage: getEmptyMessage(),
-            //         child: getEmptyChild())
-            //     : list.isEmpty
-            //         ? buildLoadingWidget()
-            //         : null,
             onRefresh: hasRefresh()
                 ? () async {
                     await fetchData(false);
@@ -214,7 +217,7 @@ abstract class MiniListState<T extends StatefulWidget, M> extends State<T>
 
   bool hasMore() => true;
 
-  Color getBackgroundColor() => Theme.of(context).colorScheme.background;
+  Color getBackgroundColor() => Theme.of(context).colorScheme.surface;
 
   Future<void> fetchData(bool more) async {
     if (more) {
@@ -231,14 +234,8 @@ abstract class MiniListState<T extends StatefulWidget, M> extends State<T>
       list.addAll(value);
     }
     showEmptyWidget = list.isEmpty;
-    if (mounted) {
-      if (more) {
-        _controller.finishLoad();
-      } else {
-        _controller.finishRefresh();
-      }
-      setState(() {});
-    }
+    finishRefresh();
+    setState(() {});
   }
 
   void finishRefresh() {

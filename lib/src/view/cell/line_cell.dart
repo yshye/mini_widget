@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:mini_extension/mini_extension.dart';
 
 import '../../util/_.dart';
 import '../res/_.dart';
-import '../../extension/extension.dart';
 import '../widget/border_widget.dart';
 import 'height_key_widget.dart';
 
@@ -29,7 +29,7 @@ class LineCell extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
 
   const LineCell({
-    Key? key,
+    super.key,
     this.title,
     this.titleChild,
     this.iconData,
@@ -48,7 +48,7 @@ class LineCell extends StatelessWidget {
     this.heightKey,
     this.iconColor,
     this.padding = const EdgeInsets.symmetric(horizontal: 25),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

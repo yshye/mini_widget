@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import '../../config.dart';
 import '../base/mixin_state.dart';
 import '../widget/scrawl_location_widget.dart';
@@ -29,10 +30,6 @@ class _ScrawlLocationPageState extends State<ScrawlLocationPage>
   final GlobalKey<ScrawlWithLocationState> _key = GlobalKey();
   LocationFlutterPlugin myLocPlugin = LocationFlutterPlugin();
 
-  @override
-  void initState() {
-    super.initState();
-  }
   /// 申请定位权限
   /// 授予定位权限返回true， 否则返回false
   Future<bool> requestLocationPermission() async {

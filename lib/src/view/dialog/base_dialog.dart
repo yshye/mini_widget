@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BaseDialog extends StatelessWidget {
   const BaseDialog({
-    Key? key,
+    super.key,
     this.title,
     this.onClick1,
     this.onClick2,
@@ -16,7 +16,7 @@ class BaseDialog extends StatelessWidget {
     this.button1Text,
     this.button2Text,
     this.width,
-  }) : super(key: key);
+  });
 
   final String? title;
   final VoidCallback? onClick1;
@@ -109,11 +109,10 @@ class BaseDialog extends StatelessWidget {
 
 class _DialogButton extends StatelessWidget {
   const _DialogButton({
-    Key? key,
     required this.text,
     this.textColor,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   final String text;
   final Color? textColor;

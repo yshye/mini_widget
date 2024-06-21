@@ -9,13 +9,13 @@ class HeightKeyWidget extends StatelessWidget {
   final int? makLines;
 
   const HeightKeyWidget({
-    Key? key,
+    super.key,
     required this.content,
     this.heightKey,
     this.heightColor = Colors.pink,
     this.textStyle = const TextStyle(color: Colors.black),
     this.makLines,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

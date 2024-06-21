@@ -17,7 +17,7 @@ class TabRowCell extends StatelessWidget {
 
   const TabRowCell(
     this.data, {
-    Key? key,
+    super.key,
     this.color = const Color(0xFFE3F2FD),
     this.textStyle,
     this.action = false,
@@ -29,7 +29,7 @@ class TabRowCell extends StatelessWidget {
     this.alignment,
     this.shapeColor = const Color(0xffD4D6DE),
     this.maxLines,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

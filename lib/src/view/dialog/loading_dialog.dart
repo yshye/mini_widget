@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class LoadingDialog extends StatelessWidget {
   const LoadingDialog({
-    Key? key,
+    super.key,
     this.hintText = '正在处理...',
-  }) : super(key: key);
+  });
 
   final String hintText;
 

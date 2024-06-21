@@ -21,14 +21,13 @@ class GZXDropDownMenu extends StatefulWidget {
   final DropdownMenuChange? dropdownMenuChanged;
 
   const GZXDropDownMenu(
-      {Key? key,
+      {super.key,
       required this.controller,
       required this.menus,
       this.animationMilliseconds = 500,
       this.maskColor = const Color.fromRGBO(0, 0, 0, 0.5),
       this.dropdownMenuChanging,
-      this.dropdownMenuChanged})
-      : super(key: key);
+      this.dropdownMenuChanged});
 
   @override
   createState() => _GZXDropDownMenuState();
@@ -100,10 +99,9 @@ class _GZXDropDownMenuState extends State<GZXDropDownMenu>
 
     _animation?.removeListener(_animationListener);
     _animation?.removeStatusListener(_animationStatusListener);
-    _animation =
-        Tween(begin: 0.0, end: _dropDownHeight).animate(_controller!)
-          ..addListener(_animationListener)
-          ..addStatusListener(_animationStatusListener);
+    _animation = Tween(begin: 0.0, end: _dropDownHeight).animate(_controller!)
+      ..addListener(_animationListener)
+      ..addStatusListener(_animationStatusListener);
 
     if (_isControllerDisposed) return;
 

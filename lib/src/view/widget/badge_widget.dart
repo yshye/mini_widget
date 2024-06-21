@@ -53,8 +53,7 @@ class BadgeTipWidget extends StatelessWidget {
   final double fontSize;
 
   const BadgeTipWidget(
-      {Key? key, this.count = 0, this.flag = false, this.fontSize = 14})
-      : super(key: key);
+      {super.key, this.count = 0, this.flag = false, this.fontSize = 14});
 
   @override
   Widget build(BuildContext context) {

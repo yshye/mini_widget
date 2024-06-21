@@ -12,7 +12,7 @@ class ErrorLineCell extends StatelessWidget {
   final bool center;
 
   const ErrorLineCell({
-    Key? key,
+    super.key,
     this.errorText,
     this.errorIcon = Icons.info_outline,
     this.errorColor = Colors.red,
@@ -20,7 +20,7 @@ class ErrorLineCell extends StatelessWidget {
     this.backgroundColor,
     this.onTap,
     this.center = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -22,7 +22,7 @@ class TagValueCell extends StatelessWidget {
   final double paddingRight;
 
   const TagValueCell({
-    Key? key,
+    super.key,
     this.context,
     required this.data,
     this.color,
@@ -32,7 +32,7 @@ class TagValueCell extends StatelessWidget {
     this.padding = const EdgeInsets.all(1),
     this.textAlign = TextAlign.left,
     this.paddingRight = 0.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -8,7 +8,7 @@ import 'base_dialog.dart';
 
 class InputDialog extends StatefulWidget {
   const InputDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.onPressed,
     this.cancelCallback,
@@ -25,7 +25,7 @@ class InputDialog extends StatefulWidget {
     this.minLength,
     this.width,
     this.maxNum,
-  }) : super(key: key);
+  });
 
   final String title;
   final TextStyle? titleTextStyle;

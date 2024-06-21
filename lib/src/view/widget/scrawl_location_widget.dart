@@ -5,9 +5,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:io';
-
-import '../../datetime/date_util.dart';
-import '../../extension/extension.dart';
+import 'package:mini_extension/mini_extension.dart';
 
 import '../../util/string_util.dart';
 import '../base/mixin_state.dart';
@@ -179,12 +177,12 @@ class ScrawlWithLocationState extends State<ScrawlWithLocationWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                DateTime.now().getFormatStr(format: DateFormat.HOUR_MINUTE),
+                DateTime.now().getDateStr(format: "HH:mm"),
                 style: MiniStyle.textTitle
                     .copyWith(color: Colors.white, fontSize: 24),
               ),
               Text(
-                "${DateTime.now().getFormatStr(format: DateFormat.YEAR_MONTH_DAY)}  ${DateUtil.getZHWeekDay(DateTime.now())}",
+                "${DateTime.now().getDateStr()}  ${DateTime.now().getDateStr(format: "EEEE")}",
                 style: MiniStyle.textNormal.copyWith(color: Colors.white),
               ),
               Row(

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class MiniIconButton extends StatelessWidget {
   const MiniIconButton(
     this.text, {
-    Key? key,
+    super.key,
     required this.onPressed,
     this.iconData,
     this.color,
     this.textColor,
-  }) : super(key: key);
+  });
 
   final String text;
   final VoidCallback onPressed;

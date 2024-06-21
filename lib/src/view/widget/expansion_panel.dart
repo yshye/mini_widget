@@ -31,13 +31,13 @@ class ExpansionPanelWidget extends StatefulWidget {
   final ExpansionPanelController? controller;
 
   const ExpansionPanelWidget({
-    Key? key,
+    super.key,
     required this.header,
     required this.body,
     this.iconRight = 30,
     this.iconColor = const Color(0xe6b5b5b5),
     this.controller,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _ExpansionPanelWidgetState();
