@@ -133,92 +133,92 @@ class _GZXDropDownHeaderState extends State<GZXDropDownHeader>
     );
   }
 
-  _menu(GZXDropDownHeaderItem item) {
-    int index = widget.items.indexOf(item);
-    int menuIndex = widget.controller.menuIndex;
-    _isShowDropDownItemWidget = index == menuIndex && widget.controller.isShow;
-
-    return GestureDetector(
-      onTap: () {
-        final RenderBox? overlay =
-            widget.stackKey.currentContext!.findRenderObject() as RenderBox?;
-
-        final RenderBox dropDownItemRenderBox =
-            _keyDropDownHeader.currentContext!.findRenderObject() as RenderBox;
-
-        var position =
-            dropDownItemRenderBox.localToGlobal(Offset.zero, ancestor: overlay);
-//        print("POSITION : $position ");
-        var size = dropDownItemRenderBox.size;
-//        print("SIZE : $size");
-
-        widget.controller.dropDownHeaderHeight = size.height + position.dy;
-
-        if (index == menuIndex) {
-          if (widget.controller.isShow) {
-            widget.controller.hide();
-          } else {
-            widget.controller.show(index);
-          }
-        } else {
-          if (widget.controller.isShow) {
-            widget.controller.hide(isShowHideAnimation: false);
-          }
-          widget.controller.show(index);
-        }
-
-        if (widget.onItemTap != null) {
-          widget.onItemTap!(index);
-        }
-
-        setState(() {});
-      },
-      child: Container(
-        color: widget.color,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Flexible(
-                    child: Text(
-                      item.title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: _isShowDropDownItemWidget
-                          ? _dropDownStyle
-                          : widget.style.merge(item.style),
-                    ),
-                  ),
-                  Icon(
-                    !_isShowDropDownItemWidget
-                        ? item.iconData ?? Icons.arrow_drop_down
-                        : item.iconData ?? Icons.arrow_drop_up,
-                    color: _isShowDropDownItemWidget
-                        ? _iconDropDownColor
-                        : item.style?.color ?? widget.iconColor,
-                    size: item.iconSize ?? widget.iconSize,
-                  ),
-                ],
-              ),
-            ),
-            index == widget.items.length - 1
-                ? Container()
-                : Container(
-                    height: widget.dividerHeight,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        right: BorderSide(color: widget.dividerColor, width: 1),
-                      ),
-                    ),
-                  )
-          ],
-        ),
-      ),
-    );
-  }
+//   _menu(GZXDropDownHeaderItem item) {
+//     int index = widget.items.indexOf(item);
+//     int menuIndex = widget.controller.menuIndex;
+//     _isShowDropDownItemWidget = index == menuIndex && widget.controller.isShow;
+//
+//     return GestureDetector(
+//       onTap: () {
+//         final RenderBox? overlay =
+//             widget.stackKey.currentContext!.findRenderObject() as RenderBox?;
+//
+//         final RenderBox dropDownItemRenderBox =
+//             _keyDropDownHeader.currentContext!.findRenderObject() as RenderBox;
+//
+//         var position =
+//             dropDownItemRenderBox.localToGlobal(Offset.zero, ancestor: overlay);
+// //        print("POSITION : $position ");
+//         var size = dropDownItemRenderBox.size;
+// //        print("SIZE : $size");
+//
+//         widget.controller.dropDownHeaderHeight = size.height + position.dy;
+//
+//         if (index == menuIndex) {
+//           if (widget.controller.isShow) {
+//             widget.controller.hide();
+//           } else {
+//             widget.controller.show(index);
+//           }
+//         } else {
+//           if (widget.controller.isShow) {
+//             widget.controller.hide(isShowHideAnimation: false);
+//           }
+//           widget.controller.show(index);
+//         }
+//
+//         if (widget.onItemTap != null) {
+//           widget.onItemTap!(index);
+//         }
+//
+//         setState(() {});
+//       },
+//       child: Container(
+//         color: widget.color,
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             Expanded(
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: <Widget>[
+//                   Flexible(
+//                     child: Text(
+//                       item.title,
+//                       maxLines: 1,
+//                       overflow: TextOverflow.ellipsis,
+//                       style: _isShowDropDownItemWidget
+//                           ? _dropDownStyle
+//                           : widget.style.merge(item.style),
+//                     ),
+//                   ),
+//                   Icon(
+//                     !_isShowDropDownItemWidget
+//                         ? item.iconData ?? Icons.arrow_drop_down
+//                         : item.iconData ?? Icons.arrow_drop_up,
+//                     color: _isShowDropDownItemWidget
+//                         ? _iconDropDownColor
+//                         : item.style?.color ?? widget.iconColor,
+//                     size: item.iconSize ?? widget.iconSize,
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             index == widget.items.length - 1
+//                 ? Container()
+//                 : Container(
+//                     height: widget.dividerHeight,
+//                     decoration: BoxDecoration(
+//                       border: Border(
+//                         right: BorderSide(color: widget.dividerColor, width: 1),
+//                       ),
+//                     ),
+//                   )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
 
   _buildItem(GZXDropDownHeaderItem item) {
     int index = widget.items.indexOf(item);
