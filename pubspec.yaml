@@ -1,6 +1,6 @@
 name: mini_widget
 description: Flutter base component package, For example InkCell, BlocProvider, etc.
-version: 3.0.9
+version: 3.0.10
 homepage: https://github.com/collectFlutter/mini_widget
 
 environment:
@@ -27,3 +27,4 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter:
