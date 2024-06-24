@@ -1,7 +1,7 @@
 name: mini_widget
 description: "Flutter base component package, For example InkCell, BlocProvider, etc."
-version: 3.0.11
-homepage: "https://github.com/collectFlutter/mini_widget"
+version: 3.0.12
+homepage: "https://github.com/collectFlutter/mini_widget.git"
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
