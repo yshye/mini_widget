@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mini_extension/mini_extension.dart';
 import '../base/_.dart';
-
-import '../../util/url_util.dart';
 
 /// 启动图封装
 class LaunchPage extends StatefulWidget {
@@ -38,7 +37,7 @@ class _LaunchPageState extends MiniDetailState<LaunchPage> {
     return AnimatedOpacity(
       opacity: 1,
       duration: widget.splashTimes,
-      child: UrlUtil.isUrl(widget.launchBackgroundPath)
+      child: widget.launchBackgroundPath.isUrl
           ? Image.network(widget.launchBackgroundPath,
               width: double.infinity,
               fit: BoxFit.cover,

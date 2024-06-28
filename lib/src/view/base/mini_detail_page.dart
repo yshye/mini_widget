@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import '../../util/_.dart';
-
 abstract class MiniDetailPage extends StatelessWidget {
   const MiniDetailPage({super.key});
 
@@ -34,7 +32,10 @@ abstract class MiniDetailPage extends StatelessWidget {
     );
   }
 
-  bool isEmpty(value) => StringUtil.isEmpty(value);
+  bool isEmpty(value) =>
+      value == null ||
+      (value is String && value.isEmpty) ||
+      (value is List && value.isEmpty);
 
   Color getBackgroundColor(BuildContext context) =>
       Theme.of(context).colorScheme.surface;

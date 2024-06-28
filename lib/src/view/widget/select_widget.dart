@@ -70,7 +70,7 @@ class SelectWidgetState<T> extends State<SelectWidget> {
   }
 
   void search(String searchKey) {
-    if (StringUtil.isEmpty(searchKey)) {
+    if (searchKey.isEmpty) {
       items.clear();
       items.addAll(bases);
     } else {

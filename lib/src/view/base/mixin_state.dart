@@ -11,6 +11,7 @@ import '../dialog/_.dart';
 
 import '../toast.dart';
 import '../../router/pop_param.dart';
+import '../typedef.dart';
 
 mixin StateMixin<T extends StatefulWidget> on State<T> {
   List<TextEditingController> textControllers = [];
@@ -89,6 +90,13 @@ mixin StateMixin<T extends StatefulWidget> on State<T> {
 
   void showError(String error) => ToastUtil.showError(error);
 
+  bottomSheetListMenu<M>(String title, List<M> item,
+      {required ValueChanged<int?> voidItemCallback,
+      BuildCheckChild<M>? buildCheckChild}) {
+    showBottomPopup(context, title, item, buildCheckChild: buildCheckChild)
+        .then(voidItemCallback);
+  }
+
   void massageDialog(String content,
           {String? title,
           String? colorContent,
@@ -125,7 +133,10 @@ mixin StateMixin<T extends StatefulWidget> on State<T> {
         left: left,
       );
 
-  bool isEmpty(value) => StringUtil.isEmpty(value);
+  bool isEmpty(value) =>
+      value == null ||
+      (value is String && value.isEmpty) ||
+      (value is List && value.isEmpty);
 
   bool isNotEmpty(value) => !isEmpty(value);
 

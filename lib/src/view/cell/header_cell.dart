@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_extension/mini_extension.dart';
 
 import '../../util/_.dart';
 import '../model/_.dart';
@@ -34,7 +35,7 @@ Widget buildHeaderCell(
           alignment: Alignment.centerLeft,
           child: ledging ??
               (imagePath != null
-                  ? UrlUtil.isUrl(imagePath)
+                  ? imagePath.isUrl
                       ? Image.network(imagePath, height: 20, width: 20)
                       : Image.asset(imagePath, height: 20, width: 20)
                   : Container()),

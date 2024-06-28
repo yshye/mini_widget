@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../router/navigator_util.dart';
-import '../../util/string_util.dart';
 import '../../util/theme_util.dart';
 import '../model/tag_value_model.dart';
 import '../toast.dart';
@@ -127,7 +127,7 @@ class TagValueCell extends StatelessWidget {
     bool flag = false;
     String url = '';
     IconData? iconData;
-    if (!StringUtil.isEmpty(value)) {
+    if (value.isNotEmpty) {
       if (clip) iconData = Icons.content_copy;
       if (inputType == TextInputType.phone) {
         flag = true;
@@ -184,8 +184,8 @@ class TagValueCell extends StatelessWidget {
                 if (clipTap != null) {
                   clipTap();
                 } else {
-                  if (!StringUtil.isEmpty(value)) {
-                    StringUtil.clip(value);
+                  if (value.isNotEmpty) {
+                    Clipboard.setData(ClipboardData(text: value));
                     ToastUtil.show('已复制');
                   }
                 }

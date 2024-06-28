@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_extension/mini_extension.dart';
 import 'package:mini_widget/src/view/res/colors.dart';
 
 import '../../util/_.dart';
@@ -76,7 +77,7 @@ Widget buildCheckCell({
 Widget buildCheckItem(String label, bool selected,
     {Color color = MiniColor.white, String? iconUrl}) {
   List<Widget> items = [];
-  if (iconUrl != null && UrlUtil.isUrl(iconUrl)) {
+  if (iconUrl != null && iconUrl.isUrl) {
     items
       ..add(Image.network(iconUrl, width: 38, height: 28, fit: BoxFit.cover))
       ..add(const SizedBox(width: 8));

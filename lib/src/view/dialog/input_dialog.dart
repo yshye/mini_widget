@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../util/string_util.dart';
+
 // import '../cell/tag_edit_cell.dart';
 import '../toast.dart';
 import 'base_dialog.dart';
@@ -67,7 +68,7 @@ class _InputDialog extends State<InputDialog> {
 
   @override
   Widget build(BuildContext context) {
-    Widget messageWidget = StringUtil.isEmpty(widget.message)
+    Widget messageWidget = (widget.message?.isEmpty ?? true)
         ? Container()
         : Container(
             margin: const EdgeInsets.only(left: 16, right: 16),

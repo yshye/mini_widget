@@ -350,7 +350,7 @@ Widget buildTimeLineCell(
                           borderRadius: BorderRadius.circular(15.0)),
                       margin: const EdgeInsets.only(top: 2),
                       alignment: Alignment.center,
-                      child: UrlUtil.isUrl(headUrl)
+                      child: headUrl.isUrl
                           ? Image.network(headUrl)
                           : Text(circularLabel ?? '',
                               style: MiniStyle.textTag

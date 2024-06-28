@@ -75,8 +75,7 @@ class ScrawlWithLocationState extends State<ScrawlWithLocationWidget>
       PaintModel(
           sPoint: [], strokeColor: selectedColor, strokeWidth: strokeWidth)
     ];
-    imageFile =
-        StringUtil.isEmpty(widget.filePath) ? null : File(widget.filePath);
+    imageFile = widget.filePath.isEmpty ? null : File(widget.filePath);
   }
 
   @override

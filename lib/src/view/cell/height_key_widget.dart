@@ -19,7 +19,7 @@ class HeightKeyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (StringUtil.isEmpty(heightKey)) {
+    if (heightKey?.isEmpty ?? true) {
       return Text(
         content,
         maxLines: makLines,

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:mini_extension/mini_extension.dart';
 
 import '../../util/_.dart';
 import '../res/styles.dart';
@@ -140,9 +141,7 @@ class _ImageViewPageState extends State<ImagesViewPage> {
             onTap: () => Navigator.pop(context),
             child: SizedBox(
               width: w,
-              child: UrlUtil.isUrl(url)
-                  ? Image.network(url)
-                  : Image.file(File(url)),
+              child: url.isUrl ? Image.network(url) : Image.file(File(url)),
             ),
           ),
         ),

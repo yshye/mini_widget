@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_extension/mini_extension.dart';
 import '../../util/url_util.dart';
 
 class ImageCell extends StatelessWidget {
@@ -26,7 +27,7 @@ class ImageCell extends StatelessWidget {
       borderRadius: borderRadius ?? BorderRadius.all(Radius.circular(radius)),
       child: (path == null || path!.isEmpty)
           ? (errorWidget ?? Container())
-          : UrlUtil.isUrl(path!)
+          : path!.isUrl
               ? Image.network(
                   path!,
                   height: height,
